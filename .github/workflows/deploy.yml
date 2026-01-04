@@ -12,6 +12,13 @@ jobs:
   test:
     environment: testing
     runs-on: ubuntu-latest
+    services:
+      db:
+        image: postgres:16
+        ports:
+          - 27017:27017
+        env:
+          STH: sth
     container:
       image: node:16
     env:
